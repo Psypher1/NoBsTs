@@ -39,7 +39,7 @@ ids[30] = "c";
 if (ids[30] === "a") {
 }
 
-/* LOOPS */
+/* LOOPS  - in these cases allow it to infer*/
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }

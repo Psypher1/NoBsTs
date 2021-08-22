@@ -28,3 +28,24 @@ typescript has the following basic types:
 - A union type is used when you want to give a choice of the types accepted by the function
 
 Typescript must be compiled to javascript
+
+#### Defining Your Own Types
+
+You define your own type in instance where a function is potentially going to be used in a number of places
+
+unlike an interface:
+
+```ts
+interface Person {
+  first: string;
+  last: string;
+}
+```
+
+a type is:
+
+```ts
+type MutationFunction = (v: number) => number;
+```
+
+#### Funcions returning function

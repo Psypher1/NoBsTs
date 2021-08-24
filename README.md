@@ -3,6 +3,20 @@
 I will make a record of the things I will have learnt.  
 This is to better understand **typescript**, when and where to use it.
 
+## Setup
+
+`npm init -y`
+`npm i ts-node`
+`npx tsc --init`
+
+## running files
+
+`npx ts-node [filename].ts`
+
+## compiling
+
+`npx tsc [filename].ts`
+
 ## Notes
 
 - **Typescript** is _strictly typed_ - meaning if a variable's type is set, you can only assign values of that type to it
@@ -49,3 +63,5 @@ type MutationFunction = (v: number) => number;
 ```
 
 #### Funcions returning function
+
+_refer to code_

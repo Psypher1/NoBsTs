@@ -1,0 +1,23 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "I will make a record of the things I will have learnt.  \r This is to better understand **typescript**, when and where to use it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Psypher1/NoBsTs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Psypher1/NoBsTs/issues"
+  },
+  "homepage": "https://github.com/Psypher1/NoBsTs#readme",
+  "dependencies": {
+    "ts-node": "^10.2.1"
+  }
+}

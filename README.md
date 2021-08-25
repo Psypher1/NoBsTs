@@ -70,3 +70,5 @@ _refer to Day 3 code_
 
 - **unknown** is any but you have to cast it - a safe any
 - use `**?**` to make a parameter optional
+
+- adding `resolveJsonModule: true` to tsconfig will allow importing from json files

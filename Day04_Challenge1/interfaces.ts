@@ -1,4 +1,5 @@
-import houses from "./houses";
+// import houses from "./houses";
+import houses from "./houses.json";
 interface House {
   // fill
   name: string;
@@ -10,14 +11,14 @@ interface HouseWithID extends House {
   id: number;
 }
 
-function findHouses(houses: string): HouseWithID[];
+// function findHouses(houses: string): HouseWithID[];
+// function findHouses(
+//   houses: string,
+//   filter: (house: House) => boolean
+// ): HouseWithID[];
+function findHouses(houses: string | House[]): HouseWithID[];
 function findHouses(
-  houses: string,
-  filter: (house: House) => boolean
-): HouseWithID[];
-function findHouses(houses: House[]): HouseWithID[];
-function findHouses(
-  houses: House[],
+  houses: string | House[],
   filter: (house: House) => boolean
 ): HouseWithID[];
 
@@ -38,3 +39,5 @@ console.log(
 );
 
 console.log(findHouses(houses, ({ name }) => name === "Harkonnen"));
+
+// console.log(findHouses(houses));

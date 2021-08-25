@@ -72,3 +72,7 @@ _refer to Day 3 code_
 - use `**?**` to make a parameter optional
 
 - adding `resolveJsonModule: true` to tsconfig will allow importing from json files
+
+### Optionals
+
+- you cannot add anything after an optional

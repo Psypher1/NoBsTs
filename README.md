@@ -78,7 +78,9 @@ _refer to Day 3 code_
 - when you want to make it such that a valued has the option to be provided or not
 - you cannot add anything after an optional
 
-### Tuple
+### Tuples - Day 06
 
 - a tuple is an array
   - each item in a tuple can be named & have different types
+
+# Generics - Day 07

@@ -41,7 +41,7 @@ typescript has the following basic types:
 - if you want a default value (so you can choose not to pass one), you set it in the variable declaration: `str2: string = ""`
 - A union type is used when you want to give a choice of the types accepted by the function
 
-Typescript must be compiled to javascript
+**Typescript must be compiled to javascript**
 
 #### Defining Your Own Types
 
@@ -64,7 +64,7 @@ type MutationFunction = (v: number) => number;
 
 #### Funcions returning function
 
-_refer to Day 3 code_
+- _refer to Day 3 code_
 
 #### Function Overloading
 
@@ -83,4 +83,8 @@ _refer to Day 3 code_
 - a tuple is an array
   - each item in a tuple can be named & have different types
 
-# Generics - Day 07
+## Generics - Day 07
+
+- when you want the abitlity to have a type be interchangable depending on what is passed to it
+
+### Generics (KEYOF)

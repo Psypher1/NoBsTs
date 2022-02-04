@@ -1,58 +1,178 @@
-# My Journey into Typescript
+# My Journey into Typescript with guidance from Jack Herrington
 
 I will make a record of the things I will have learnt.  
 This is to better understand **typescript**, when and where to use it.
 
 ## Setup
 
-`npm init -y`
-`npm i ts-node`
-`npx tsc --init`
+```bash
+// initialise
+npm init -y
 
-## running files
+// install typescript
+npm i ts-node
 
-`npx ts-node [filename].ts`
+// initialise typescript compiler
+npx tsc --init
+```
 
-## compiling
+### Running Files
 
-`npx tsc [filename].ts`
+```bash
+npx ts-node [filename].ts
+```
 
-## Notes
+## Compiling
 
+```bash
+npx tsc [filename].ts
+```
+
+## Introduction
+
+### Why Typescript?
+
+- It will save you
+- It will help you code faster:
+
+### What is Typescript?
+
+- It is a suprset of Javascript
 - **Typescript** is _strictly typed_ - meaning if a variable's type is set, you can only assign values of that type to it
   - This allows catching of errors earlier on
 - It helps in the enforcing of set types - this happens at compile time
 
-- to avoid having to copy type definitions all over we use an **inerface**
+- to avoid having to copy type definitions all over we use an **interface**
 
 - does not change how you do things, just variable declarations & loops
   - in those cases, allow it to infer what the type is
 
-### Types
+> **NOTE**: Typescript enforces type checking at **compile** time and not run time
 
-typescript has the following basic types:
+**Day 01**
 
-- string
-- number (both whole and decimal)
-- boolean
+### Basic Types
 
-### Functions
+- typescript has the following types and this is how you specify them:
 
-- if you want a default value (so you can choose not to pass one), you set it in the variable declaration: `str2: string = ""`
-- A union type is used when you want to give a choice of the types accepted by the function
+```ts
+//string
+let userName: string = "James";
+// number
+let myNumber: number = 23;
+// boolean
+let hasLoggedIn: boolean = false;
+```
 
-**Typescript must be compiled to javascript**
+#### Arrays
 
-#### Defining Your Own Types
+```ts
+// string array
+let digimon: string[] = ["Agunimon", "Greymom", "Lobomon"];
+// number array
+let ages: number[] = [12, 24, 44];
+// using generic type
+let myValues: Array<number> = [1, 2, 3, 4, 5];
+```
 
-You define your own type in instance where a function is potentially going to be used in a number of places
+#### Objects
 
-unlike an interface:
+```ts
+const monGen: {
+  prenom: string;
+  nom: string;
+} = {
+  prenom: "Jacques",
+  nom: "Midzi",
+};
+```
+
+#### Interface
+
+- You don't want to go copying and pasting type definitions all over the place.
+- Instead we want to define once and reuse it
 
 ```ts
 interface Person {
-  first: string;
-  last: string;
+  name: string;
+  surname: string;
+}
+```
+
+### Loops
+
+- With loops, you can allow typescript to infer the types - it is smart enough to do that
+
+```ts
+for (let i = 0; i < 10; i++) {
+  console.log(i); // typesript infers that the output type is a number
+}
+```
+
+---
+
+**Day 02**
+
+### Functions
+
+- Creating functions is exactly the same
+
+```ts
+function addNumbers(a, b) {
+  return a + b;
+}
+// typescript does not like this
+module.exports = addNumbers;
+// instead we do
+export default addNumbers;
+```
+
+- if you want a default value (so you can choose not to pass one), you set it in the variable declaration: `str2: string = ""`
+
+#### Union Type
+
+- A union type is used when you want to give a choice of the types accepted by the function or variable
+
+```ts
+let age: number | string;
+
+export const printFormat = (title: string, param: string | number): void => {
+  console.log(format(title, param));
+};
+```
+
+#### Optional Chaining
+
+- `?` makes sure is that variable is defined before referencing it
+- `??` - null coalescing operator - if you have undefined on one side of the expression use values on the other side
+
+```ts
+export function getName(user: { first: string; last: string }): string {
+  return `${user?.first ?? "first"} ${user?.last ?? "last"}`;
+}
+```
+
+---
+
+**Day 03**
+
+#### Defining Types as function
+
+You define your own type in instance where a function is potentially going to be used in a number of places
+
+- Your define your own type as `type` or `interface`:
+
+```ts
+// type
+type Individual = {
+  firstName: string;
+  lastName: string;
+};
+
+// interface
+interface Person {
+  name: string;
+  age: number;
 }
 ```
 
@@ -73,7 +193,7 @@ type MutationFunction = (v: number) => number;
 
 - adding `resolveJsonModule: true` to tsconfig will allow importing from json files
 
-### Optionals
+### Optionals - Day 05
 
 - when you want to make it such that a valued has the option to be provided or not
 - you cannot add anything after an optional

@@ -1,6 +1,6 @@
 // optional parameters
 function printIngredient(quantity: string, ingredient: string, notes?: string) {
-  console.log(`${quantity}: ${ingredient} - ${notes ? `${notes}` : ""}`);
+  console.log(`${quantity}: ${ingredient} | Notes: ${notes ? `${notes}` : ""}`);
 }
 
 printIngredient("1kg", "chicken breast");

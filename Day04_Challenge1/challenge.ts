@@ -24,6 +24,7 @@ function findHouses(
   filter: (house: House) => boolean
 ): HouseWithID[];
 
+// the function
 function findHouses(
   houses: unknown,
   filter?: (house: House) => boolean

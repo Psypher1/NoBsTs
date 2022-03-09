@@ -1,4 +1,5 @@
-import houses from "./houses";
+import housed from "./houses";
+import houses from "./houses.json";
 
 interface House {
   name: string;

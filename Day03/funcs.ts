@@ -17,7 +17,11 @@ const myMutateFunc: MutationFunction = (v: number) => v * 100;
 
 console.log(arrayMutate([1, 2, 3], (v) => v * 10));
 
+/*  FUNCTION RETURNING FUNCTION */
+
+// function type
 export type AdderFunction = (val: number) => number;
+
 // returning func from func
 export function createAdder(num: number): AdderFunction {
   return (val: number) => num + val;

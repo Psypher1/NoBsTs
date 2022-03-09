@@ -97,6 +97,12 @@ interface Person {
   name: string;
   surname: string;
 }
+
+// type
+type Individual = {
+  firstName: string;
+  lastName: string;
+};
 ```
 
 ### Loops
@@ -143,8 +149,8 @@ export const printFormat = (title: string, param: string | number): void => {
 
 #### Optional Chaining
 
-- `?` makes sure is that variable is defined before referencing it
-- `??` - null coalescing operator - if you have undefined on one side of the expression use values on the other side
+- `?` : makes sure is that variable is defined before referencing it
+- `??` : - null coalescing operator - if you have undefined on one side of the expression use values on the other side
 
 ```ts
 export function getName(user: { first: string; last: string }): string {
@@ -156,27 +162,17 @@ export function getName(user: { first: string; last: string }): string {
 
 **Day 03**
 
+### Functions (cont.)
+
+- Refer to code for this day for better illustration
+
 #### Defining Types as function
 
 You define your own type in instance where a function is potentially going to be used in a number of places
 
 - Your define your own type as `type` or `interface`:
 
-```ts
-// type
-type Individual = {
-  firstName: string;
-  lastName: string;
-};
-
-// interface
-interface Person {
-  name: string;
-  age: number;
-}
-```
-
-a type is:
+A function type is:
 
 ```ts
 type MutationFunction = (v: number) => number;
@@ -184,27 +180,82 @@ type MutationFunction = (v: number) => number;
 
 #### Funcions returning function
 
-- _refer to Day 3 code_
+```ts
+// function type
+export type AdderFunction = (val: number) => number;
 
-#### Function Overloading
+// returning func from func
+export function createAdder(num: number): AdderFunction {
+  return (val: number) => num + val;
+}
+```
 
-- **unknown** is any but you have to cast it - a safe any
+---
+
+**Day 04**
+
+### Function Overloading
+
+- **unknown** is any but you have to cast it before you use it - a safe any
 - use `**?**` to make a parameter optional
 
-- adding `resolveJsonModule: true` to tsconfig will allow importing from json files
+> To be able to import from `json` files add, `resolveJsonModule: true` to `tsconfig.json`
 
-### Optionals - Day 05
+---
 
-- when you want to make it such that a valued has the option to be provided or not
+**Day 05**
+
+### Optionals
+
+- when you want to make it such that a value has the **option** to be provided or not
+  - these can be parameters:
+
+```ts
+function printUser(id: number, name: string, notes?: string);
+```
+
+- or fields
+
+```ts
+interface User {
+  id: string;
+  info?: {
+    email?: string;
+  };
+}
+```
+
 - you cannot add anything after an optional
 
-### Tuples - Day 06
+---
+
+**Day 06**
+
+### Tuples
 
 - a tuple is an array
   - each item in a tuple can be named & have different types
 
-## Generics - Day 07
+---
+
+**Day 07**
+
+### Generics
 
 - when you want the abitlity to have a type be interchangable depending on what is passed to it
 
-### Generics (KEYOF)
+#### Generics (KEYOF)
+
+---
+
+**Day 09**
+
+### Utiility Types
+
+- a generics mechanism you can use to create another type from an existing types
+
+#### Partial
+
+- takes a type and make everythinng in it optional
+
+#### Required

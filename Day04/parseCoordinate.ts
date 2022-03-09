@@ -2,7 +2,7 @@ interface Coordinate {
   x: number;
   y: number;
 }
-/* With the overloaded function,this is no longer needed */
+/* === With the overloaded function,this is no longer needed === */
 // function parseCoordinateFromObject(obj: Coordinate): Coordinate {
 //   return {
 //     ...obj,
@@ -16,9 +16,12 @@ interface Coordinate {
 //   };
 // }
 
+// variants of parseCoordinate
 function parseCoordinate(str: string): Coordinate;
 function parseCoordinate(obj: Coordinate): Coordinate;
 function parseCoordinate(x: number, y: number): Coordinate;
+
+// implementation
 function parseCoordinate(arg1: unknown, arg2?: unknown): Coordinate {
   let coord: Coordinate = {
     x: 0,
@@ -46,5 +49,8 @@ function parseCoordinate(arg1: unknown, arg2?: unknown): Coordinate {
 }
 
 console.log(parseCoordinate(10, 20));
-console.log(parseCoordinate({ x: 34, y: 66 }));
-console.log(parseCoordinate("x:23,y:33"));
+console.log(parseCoordinate({ x: 23, y: 44 }));
+console.log(parseCoordinate("x: 45,y: 76"));
+// console.log(parseCoordinate(10, 20));
+// console.log(parseCoordinate({ x: 34, y: 66 }));
+// console.log(parseCoordinate("x:23,y:33"));

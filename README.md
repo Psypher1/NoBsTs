@@ -5,7 +5,7 @@ This is to better understand **typescript**, when and where to use it.
 
 ## Setup
 
-```bash
+```sh
 // initialise
 npm init -y
 
@@ -18,13 +18,13 @@ npx tsc --init
 
 ### Running Files
 
-```bash
+```sh
 npx ts-node [filename].ts
 ```
 
 ## Compiling
 
-```bash
+```sh
 npx tsc [filename].ts
 ```
 
